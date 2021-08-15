@@ -1,9 +1,18 @@
 pipeline {
     agent any
     stages {
-        stage('Stage 1') {
+        stage('Build') {
             steps {
-                echo 'Hello world!'
+                try {
+                    sh """
+                    pwd
+                    yarn install
+                    yarn build
+                    rm -rf node_modules
+                    """
+                } catch (exc) {
+                throw (exc)
+                }
             }
         }
     }
