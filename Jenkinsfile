@@ -1,14 +1,9 @@
 pipeline {
-    agent any
+    agent { docker { image 'node:14-alpine' } }
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
-                sh """
-                pwd
-                yarn install
-                yarn build
-                rm -rf node_modules
-                """
+                sh 'npm --version'
             }
         }
     }
