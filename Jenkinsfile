@@ -6,9 +6,14 @@ pipeline {
         }
     }
     stages {
-        stage('Build') {
+        stage('Install') {
             steps {
                 sh 'yarn install'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh 'react-scripts build'
             }
         }
     }
