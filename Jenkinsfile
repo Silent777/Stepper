@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'react-scripts build'
+                sh 'yarn build'
             }
         }
     }
