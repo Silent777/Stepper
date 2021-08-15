@@ -1,5 +1,5 @@
 pipeline {
-    agent { docker { image 'node:14-alpine' } }
+    agent { docker { image 'myjenkins-blueocean' } }
     stages {
         stage('build') {
             steps {
