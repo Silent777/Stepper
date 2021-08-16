@@ -4,7 +4,7 @@ import PersonalInformationStep from './components/PersonalInformationStep'
 import AddressStep from './components/AddressStep'
 import GeneralInfoStep from './components/GeneralInfoStep'
 import { connect } from 'react-redux'
-import { storeStep } from './actions/steper'
+import { storeStep } from './actions/stepper'
 import { setFormState } from './actions/form'
 import { setActiveStage } from './actions/activeStage'
 import { saveFormData } from './actions/saveFormData'
@@ -54,20 +54,20 @@ class App extends Component {
             case 1: {
                 return <div>
                     <DotsStepper steps={2} active={this.props.step.step}/>
-                    <AddressStep 
+                    <AddressStep
                         setFormState={this.props.setFormState}
                         storeStep={this.props.storeStep}
                         saveFormData={this.props.saveFormData} />
-                </div> 
+                </div>
             }
             case 2: {
                 return <div>
                     <DotsStepper steps={2} active={this.props.step.step}/>
-                    <GeneralInfoStep 
+                    <GeneralInfoStep
                         setFormState={this.props.setFormState}
                         storeStep={this.props.storeStep}
                         saveFormData={this.props.saveFormData} />
-                </div> 
+                </div>
             }
             default:
                 return null
@@ -79,6 +79,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
+                <div>Hello World</div>
                 <MainStepper
                     isFormValid={this.props.isFormValid.isFormValid}
                     storeStep={this.props.storeStep}
